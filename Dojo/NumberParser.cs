@@ -17,6 +17,11 @@ namespace Dojo
 
         public static string ParseToRoman(int number)
         {
+            if (number < 1)
+            {
+                throw new ArgumentException();
+            }
+
             string result = "";
             RomanNumber closest = null;
             while (number > 0)

@@ -61,5 +61,12 @@ namespace Dojo.Tests
             string result = NumberParser.ParseToRoman(9);
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentException))]
+        public void test_number_0_to_throw_exception()
+        {
+            string result = NumberParser.ParseToRoman(0);
+        }
     }
 }

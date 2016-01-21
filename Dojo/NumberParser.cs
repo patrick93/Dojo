@@ -8,16 +8,29 @@ namespace Dojo
 {
     public class NumberParser
     {
+        private static List<RomanNumber> Mapper = new List<RomanNumber>(){
+            new RomanNumber(1, "I"),
+            new RomanNumber(4, "IV"),
+            new RomanNumber(5, "V"),
+            new RomanNumber(9, "IX")
+        };
+
         public static string ParseToRoman(int number)
         {
-            Dictionary<int, string> Mapper = new Dictionary<int, string> {
-                {1, "I"},
-                {5, "V"}
-            };
             string result = "";
-            for (int i = 0; i < number; i++)
+            RomanNumber closest = null;
+            while (number > 0)
             {
-                result += "I";
+                foreach (RomanNumber item in Mapper)
+                {
+                    if (item.Number > number)
+                    {
+                        break;
+                    }
+                    closest = item;
+                }
+                result += closest.Roman;
+                number -= closest.Number;
             }
             return result;
         }

@@ -37,5 +37,29 @@ namespace Dojo.Tests
             string result = NumberParser.ParseToRoman(4);
             Assert.AreEqual(expected, result);
         }
+
+        [TestMethod]
+        public void test_number_5_to_roman_V()
+        {
+            string expected = "V";
+            string result = NumberParser.ParseToRoman(5);
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void test_number_6_to_roman_VI()
+        {
+            string expected = "VI";
+            string result = NumberParser.ParseToRoman(6);
+            Assert.AreEqual(expected, result);
+        }
+
+        [TestMethod]
+        public void test_number_9_to_roman_IX()
+        {
+            string expected = "IX";
+            string result = NumberParser.ParseToRoman(9);
+            Assert.AreEqual(expected, result);
+        }
     }
 }
